@@ -1,0 +1,50 @@
+body {/* Set default body styles */
+    font-family: Calibri;/* Set default font family */
+    font-size: 16px;/* Set default font size */
+    line-height: 1.6em;/* Set default line height */
+    margin: 2;/* Set default margin */
+}
+thead {/* Set styles for table header */
+    background-color: #000;/* Set background color for table header */
+    color: #FFF;/* Set text color for table header */
+}
+/* Define styles for a table with class 'responsive-table' */
+.responsive-table {
+    width: 100%; /* Set table width to 100% of its container */
+    border-collapse: collapse; /* Collapse borders between table cells */
+    margin-bottom: 20px; /* Add margin at the bottom of the table */
+}
+
+/* Define styles for table headers and table data cells */
+.responsive-table th,
+.responsive-table td {
+    padding: 8px; /* Add padding to table header and data cells */
+    text-align: left; /* Align text within cells to the left */
+}
+
+/* Apply responsive styles for screens with a max width of 700px */
+@media screen and (max-width: 700px) {
+
+    /* Hide table headers */
+    .responsive-table th {
+        display: none; /* Hide table headers */
+    }
+
+    /* Display table data cells as blocks for stacking */
+    .responsive-table td {
+        display: block; /* Change the display property to block */
+        padding: 0px 0; /* Adjust padding for better spacing */
+    }
+
+    /* Add labels before table data cells */
+    .responsive-table tbody td::before {
+        content: attr(data-label); /* Display the 'data-label' attribute as content */
+        font-weight: bold; /* Apply bold font weight to labels */
+        display: inline-block; /* Display labels as inline blocks */
+        width: 30%; /* Set the width of the label */
+        margin-right: 5px;/* Add right margin for spacing */
+        padding-left:2px; /* Add left padding for spacing */ 
+        background-color: #EFEFEF; /* Add a grey background color */
+        font-style: inherit; /* Add a background color to the label */
+    }
+}
